@@ -4,7 +4,7 @@ Create Database:
 CREATE DATABASE db_cars_photos;
 
 Backend:
-Cambiar dentro del archivo "" para poder acceder bien a la base de datos.
+Cambiar dentro del archivo db.config.js para poder acceder bien a la base de datos.
 
 Frontend:
 La aplicación es una especie de pagina de ventas/ofertas de coches, la pagina está hecha para que hagas lo que hagas se actualice todo automáticamente,
@@ -16,3 +16,4 @@ aparecerá un boton el cual está oculto hasta que se busque una oferta la cual 
 aplicacion mas bonita pero no tuve el tiempo suficiente para hacerlo.
 
 PostMan:
+https://documenter.getpostman.com/view/29807283/2s9YRCVqjb
