@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Update Car</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="carData">
+
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="6">
+        <ion-img class="photo-frame" *ngIf="capturedPhoto" [src]="capturedPhoto" (click)="takePhoto()"></ion-img>
+        <ion-img class="photo-frame" *ngIf="!capturedPhoto" src="../../assets/No-Image-Placeholder.svg"
+          (click)="takePhoto()"></ion-img>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button color="primary" fill="outline" (click)="takePhoto()">
+          <ion-icon slot="start" name="camera-outline"></ion-icon>
+          Take a photo
+        </ion-button>
+        <ion-button color="primary" fill="outline" (click)="pickImage()">
+          <ion-icon slot="start" name="image-outline"></ion-icon>
+          Pick an image
+        </ion-button>
+        <ion-button color="danger" fill="outline" (click)="discardImage()">
+          <ion-icon slot="start" name="aperture"></ion-icon>
+          Discard image
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <form [formGroup]="carForm" (ngSubmit)="updateCar()" novalidate>
+    <ion-item lines="full">
+      <ion-label position="floating">Marca</ion-label>
+      <ion-input formControlName="marca" type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Modelo</ion-label>
+      <ion-input formControlName="modelo" type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Precio</ion-label>
+      <ion-input formControlName="precio" type="text"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Descripcion</ion-label>
+      <ion-input formControlName="descripcion" type="text"></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button color="primary" type="submit">Update Car</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
